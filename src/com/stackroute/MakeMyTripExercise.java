@@ -57,7 +57,7 @@ public class MakeMyTripExercise {
 			driver.findElement(By.xpath("//*[@id=\"SW\"]/div[1]/div[1]/ul/li[6]")).click();
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.id("username")));	
 			WebElement email=driver.findElement(By.id("username"));
-			email.sendKeys("testmail20@gmail.com");
+			email.sendKeys("testmailaish20@gmail.com");
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"SW\"]/div[1]/div[2]/div[2]/section/form/div[2]/button")));
 			driver.findElement(By.xpath("//*[@id=\"SW\"]/div[1]/div[2]/div[2]/section/form/div[2]/button")).click();
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.name("verifyOTPText")));	
@@ -66,7 +66,6 @@ public class MakeMyTripExercise {
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"SW\"]/div[1]/div[2]/div[2]/section/form/div[2]/button")));
 			driver.findElement(By.xpath("//*[@id=\"SW\"]/div[1]/div[2]/div[2]/section/form/div[2]/button")).click();
 			WebDriverWait wait1 = new WebDriverWait(driver, 20000);
-			Thread.sleep(30000);
 			wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"SW\"]/div[1]/div[2]/div[2]/section/form/div[1]/div/a")));
 			driver.findElement(By.xpath("//*[@id=\"SW\"]/div[1]/div[2]/div[2]/section/form/div[1]/div/a")).click();
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.id("firstName")));	
@@ -152,4 +151,8 @@ public class MakeMyTripExercise {
 			driver.findElement(By.id("btn_gen_pmt")).click();
 
 	}
+	@AfterClass
+	public void close() {
+		driver.quit();
+		}
 }
